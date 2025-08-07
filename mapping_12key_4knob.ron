@@ -14,10 +14,11 @@
                 [(delay: 0, mapping: "ctrl-a"), (delay: 0, mapping: "ctrl-s"), (delay: 0, mapping: "ctrl-f"), (delay: 0, mapping: "enter")],
                 [(delay: 0, mapping: "tab"), (delay: 0, mapping: "escape"), (delay: 0, mapping: "backspace"), (delay: 0, mapping: "delete")],
             ],
-            kn           (ccw: (delay: 0, mapping: "volumedown"), press: (delay: 0, mapping: "mute"), cw: (delay: 0, mapping: "volumeup")),
+            knobs: [
+                (ccw: (delay: 0, mapping: "volumedown"), press: (delay: 0, mapping: "mute"), cw: (delay: 0, mapping: "volumeup")),
                 (ccw: (delay: 0, mapping: "previous"), press: (delay: 0, mapping: "play"), cw: (delay: 0, mapping: "next")),
-                (ccw: (delay: 0, mapping: "wheeldown"), press: (delay: 0, mapping: "click"), cw: (delay: 0, mapping: "wheelup")),
                 (ccw: (delay: 0, mapping: "ctrl-wheeldown"), press: (delay: 0, mapping: "rclick"), cw: (delay: 0, mapping: "ctrl-wheelup")),
+                (ccw: (delay: 0, mapping: "wheeldown"), press: (delay: 0, mapping: "click"), cw: (delay: 0, mapping: "wheelup")),
             ],
         ),
         // layer 2 - Media controls
