@@ -449,9 +449,9 @@ impl Keyboard884x {
             if col == 0 {
                 col = cols;
             }
-            col -= 1;
+            col = col.saturating_sub(1);
         } else {
-            col = key_num - 1;
+            col = key_num.saturating_sub(1);
         }
         Ok((row.into(), col.into()))
     }

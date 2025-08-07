@@ -285,7 +285,7 @@ fn open_keyboard(options: &Options) -> Result<Box<dyn Keyboard>> {
         .context("claim interface")?;
 
     match id_product {
-        0x8840 | 0x8842 => {
+        0x8840 | 0x8842 | 0x8850 => {
             k884x::Keyboard884x::new(Some(handle), endpt_addr_out, endpt_addr_in, id_product)
                 .map(|v| Box::new(v) as Box<dyn Keyboard>)
         }
@@ -326,7 +326,9 @@ pub fn find_device(vid: u16, pid: Option<u16>) -> Result<(Device<Context>, Devic
                     found.push((device, desc, product_id));
                 }
             } else {
-                found.push((device, desc, product_id));
+                if PRODUCT_IDS.contains(&product_id) {
+                    found.push((device, desc, product_id));
+                }
             }
         }
     }
@@ -348,7 +350,7 @@ pub fn find_device(vid: u16, pid: Option<u16>) -> Result<(Device<Context>, Devic
                 Several compatible devices are found.
                 Unfortunately, this model of keyboard doesn't have serial number.
                 So specify USB address using --address option.
-                
+
                 Addresses:
                 {}
             "},

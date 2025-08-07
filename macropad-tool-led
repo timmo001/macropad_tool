@@ -1,0 +1,29 @@
+#!/bin/bash
+declare -a COLS=( "red" "orange" "yellow" "green" "cyan" "blue" "purple" )
+
+AL=${#COLS[@]}
+
+CSHM="/dev/shm/mpcol.txt"
+
+if [ ! -f "$CSHM" ]; then
+  echo 0 > "$CSHM"
+fi
+
+CUR="$(cat "$CSHM")"
+
+if [ -z "$1" ] || [ "$1" == "u" ]; then
+  NXT=$(( CUR + 1 ))
+  if [ "$NXT" -gt "$AL" ]; then
+    NXT=0
+  fi
+  echo "$NXT" > "$CSHM"
+
+elif [ "$1" == "d" ]; then
+  NXT=$(( CUR - 1 ))
+  if [ "$NXT" -lt 0 ]; then
+    NXT="$AL"
+  fi
+  echo "$NXT" > "$CSHM"
+fi
+
+macropad-tool --vendor-id 0x514c led 3 1 "${COLS[$NXT]}"

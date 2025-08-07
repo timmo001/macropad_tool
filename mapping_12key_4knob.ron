@@ -1,0 +1,52 @@
+(
+    device: (
+        // Normal, Clockwise, CounterClockwise, UpsideDown
+        orientation: Normal,
+        rows: 3,
+        cols: 4,
+        knobs: 4,
+    ),
+    layers: [
+        // layer 1 - General use
+        (
+            buttons: [
+                [(delay: 0, mapping: "ctrl-c"), (delay: 0, mapping: "ctrl-v"), (delay: 0, mapping: "ctrl-z"), (delay: 0, mapping: "ctrl-y")],
+                [(delay: 0, mapping: "ctrl-a"), (delay: 0, mapping: "ctrl-s"), (delay: 0, mapping: "ctrl-f"), (delay: 0, mapping: "enter")],
+                [(delay: 0, mapping: "tab"), (delay: 0, mapping: "escape"), (delay: 0, mapping: "backspace"), (delay: 0, mapping: "delete")],
+            ],
+            kn           (ccw: (delay: 0, mapping: "volumedown"), press: (delay: 0, mapping: "mute"), cw: (delay: 0, mapping: "volumeup")),
+                (ccw: (delay: 0, mapping: "previous"), press: (delay: 0, mapping: "play"), cw: (delay: 0, mapping: "next")),
+                (ccw: (delay: 0, mapping: "wheeldown"), press: (delay: 0, mapping: "click"), cw: (delay: 0, mapping: "wheelup")),
+                (ccw: (delay: 0, mapping: "ctrl-wheeldown"), press: (delay: 0, mapping: "rclick"), cw: (delay: 0, mapping: "ctrl-wheelup")),
+            ],
+        ),
+        // layer 2 - Media controls
+        (
+            buttons: [
+                [(delay: 0, mapping: "f1"), (delay: 0, mapping: "f2"), (delay: 0, mapping: "f3"), (delay: 0, mapping: "f4")],
+                [(delay: 0, mapping: "f5"), (delay: 0, mapping: "f6"), (delay: 0, mapping: "f7"), (delay: 0, mapping: "f8")],
+                [(delay: 0, mapping: "f9"), (delay: 0, mapping: "f10"), (delay: 0, mapping: "f11"), (delay: 0, mapping: "f12")],
+            ],
+            knobs: [
+                (ccw: (delay: 0, mapping: "volumedown"), press: (delay: 0, mapping: "mute"), cw: (delay: 0, mapping: "volumeup")),
+                (ccw: (delay: 0, mapping: "previous"), press: (delay: 0, mapping: "play"), cw: (delay: 0, mapping: "next")),
+                (ccw: (delay: 0, mapping: "stop"), press: (delay: 0, mapping: "play"), cw: (delay: 0, mapping: "next")),
+                (ccw: (delay: 0, mapping: "favorites"), press: (delay: 0, mapping: "calculator"), cw: (delay: 0, mapping: "screenlock")),
+            ],
+        ),
+        // layer 3 - Special functions
+        (
+            buttons: [
+                [(delay: 0, mapping: "ctrl-alt-delete"), (delay: 0, mapping: "ctrl-alt-f3"), (delay: 0, mapping: "ctrl-alt-f4"), (delay: 0, mapping: "ctrl-alt-f5")],
+                [(delay: 0, mapping: "ctrl-shift-escape"), (delay: 0, mapping: "win-r"), (delay: 0, mapping: "win-e"), (delay: 0, mapping: "win-d")],
+                [(delay: 0, mapping: "ctrl-shift-t"), (delay: 0, mapping: "ctrl-shift-n"), (delay: 0, mapping: "ctrl-tab"), (delay: 0, mapping: "ctrl-shift-tab")],
+            ],
+            knobs: [
+                (ccw: (delay: 0, mapping: "volumedown"), press: (delay: 0, mapping: "mute"), cw: (delay: 0, mapping: "volumeup")),
+                (ccw: (delay: 0, mapping: "previous"), press: (delay: 0, mapping: "play"), cw: (delay: 0, mapping: "next")),
+                (ccw: (delay: 0, mapping: "wheeldown"), press: (delay: 0, mapping: "click"), cw: (delay: 0, mapping: "wheelup")),
+                (ccw: (delay: 0, mapping: "ctrl-wheeldown"), press: (delay: 0, mapping: "rclick"), cw: (delay: 0, mapping: "ctrl-wheelup")),
+            ],
+        ),
+    ],
+)

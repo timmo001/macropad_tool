@@ -173,7 +173,7 @@ impl Mapping {
         let mut max_programmable_keys = 0xff;
         if let Some(max) = pid {
             match max {
-                0x8840 | 0x8842 => max_programmable_keys = consts::MAX_KEY_PRESSES_884X,
+                0x8840 | 0x8842 | 0x8850 => max_programmable_keys = consts::MAX_KEY_PRESSES_884X,
                 0x8890 => max_programmable_keys = consts::MAX_KEY_PRESSES_8890,
                 _ => {
                     let err_msg = format!("Unknown product id 0x{:02x}", pid.unwrap());
